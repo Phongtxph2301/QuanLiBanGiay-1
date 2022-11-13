@@ -21,7 +21,7 @@ namespace C_GUI.Views
             _lsvShowSanPham.Items.Clear();
             foreach (B_BUS.View_Models.QLChiTietGiayView x in _iQlChiTietGiayServices.Getall())
             {
-                string[] row = { x.IdCTG.ToString(), x.TenGiay, x.TenMauSac, x.TenHangGiay, x.TenNsx, x.TenSize, x.KichCo.ToString(), x.GiaBan.ToString(), x.SoLuongTon.ToString(), x.MoTa };
+                string[] row = { x.ChiTietGiay.Id.ToString(), x.Giay.TenGiay, x.MauSac.TenMauSac, x.HangGiay.TenHangGiay, x.Nsx.TenNsx, x.Size.TenSize, x.ChieuCaoDeGiay.KichCo.ToString(), x.ChiTietGiay.GiaBan.ToString(), x.ChiTietGiay.SoLuongTon.ToString(), x.ChiTietGiay.MoTa };
                 ListViewItem listViewItem = new(row);
                 _ = _lsvShowSanPham.Items.Add(listViewItem);
             }

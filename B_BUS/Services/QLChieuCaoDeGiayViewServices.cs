@@ -19,10 +19,10 @@ namespace B_BUS.Services
             //ADD
             ChieuCaoDeGiay kh = new()
             {
-                Id = khv.Id,
-                MaKichCo = khv.MaKichCo,
-                KichCo = khv.KichCo,
-                TrangThai = khv.TrangThai,
+                //Id = khv.Id,
+                //MaKichCo = khv.MaKichCo,
+                //KichCo = khv.KichCo,
+                //TrangThai = khv.TrangThai,
 
 
             };
@@ -31,15 +31,16 @@ namespace B_BUS.Services
 
         public string Update(QLChieuCaoDeGiayView khv)
         {
-            //Update
-            ChieuCaoDeGiay? x = _ccdgrp.GetAll().FirstOrDefault(c => c.Id == khv.Id);
-            x.Id = khv.Id;
+            ////Update
+            //ChieuCaoDeGiay? x = _ccdgrp.GetAll().FirstOrDefault(c => c.Id == khv.Id);
+            ////x.Id = khv.Id;
 
-            x.MaKichCo = khv.MaKichCo;
-            x.KichCo = khv.KichCo;
-            x.TrangThai = khv.TrangThai;
+            ////x.MaKichCo = khv.MaKichCo;
+            ////x.KichCo = khv.KichCo;
+            ////x.TrangThai = khv.TrangThai;
 
-            return _ccdgrp.Update(x) ? "sửa thành công" : "sửa thất bại";
+            //return _ccdgrp.Update(x) ? "sửa thành công" : "sửa thất bại";
+            return "a";
         }
 
         public string Delete(Guid idGuid)
@@ -55,10 +56,7 @@ namespace B_BUS.Services
             return (from a in _ccdgrp.GetAll()
                     select new QLChieuCaoDeGiayView()
                     {
-                        Id = a.Id,
-                        MaKichCo = a.MaKichCo,
-                        KichCo = a.KichCo,
-                        TrangThai = a.TrangThai,
+                        ChieuCaoDeGiay = a
 
                     }).ToList();
         }

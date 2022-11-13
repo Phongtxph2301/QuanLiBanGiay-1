@@ -36,17 +36,17 @@ namespace B_BUS.Services
             ChiTietGiay b = new()
             {
 
-                IdMauSac = khv.IdMauSac,
-                IdNsx = khv.IdNsx,
-                IdSize = khv.IdSize,
-                IdHangGiay = khv.IdHangGiay,
-                IdChieuCaoDeGiay = khv.IdChieuCaoDeGiay,
-                IdGiay = khv.IdGiay,
-                MoTa = khv.MoTa,
-                GiaBan = khv.GiaBan,
-                GiaNhap = khv.GiaNhap,
-                SoLuongTon = khv.SoLuongTon,
-                TrangThai = khv.TrangThaiCTG,
+                //IdMauSac = khv.IdMauSac,
+                //IdNsx = khv.IdNsx,
+                //IdSize = khv.IdSize,
+                //IdHangGiay = khv.IdHangGiay,
+                //IdChieuCaoDeGiay = khv.IdChieuCaoDeGiay,
+                //IdGiay = khv.IdGiay,
+                //MoTa = khv.MoTa,
+                //GiaBan = khv.GiaBan,
+                //GiaNhap = khv.GiaNhap,
+                //SoLuongTon = khv.SoLuongTon,
+                //TrangThai = khv.TrangThaiCTG,
 
             };
             return _IChiTietGiayRepositories.Add(b) ? "thêm thành công" : "thêm thành công";
@@ -61,18 +61,18 @@ namespace B_BUS.Services
 
             ChiTietGiay b = new()
             {
-                Id = khv.IdCTG,
-                IdMauSac = khv.IdMauSac,
-                IdNsx = khv.IdNsx,
-                IdSize = khv.IdSize,
-                IdHangGiay = khv.IdHangGiay,
-                IdChieuCaoDeGiay = khv.IdChieuCaoDeGiay,
-                IdGiay = khv.IdGiay,
-                MoTa = khv.MoTa,
-                GiaBan = khv.GiaBan,
-                GiaNhap = khv.GiaNhap,
-                SoLuongTon = khv.SoLuongTon,
-                TrangThai = khv.TrangThaiCTG,
+                //Id = khv.IdCTG,
+                //IdMauSac = khv.IdMauSac,
+                //IdNsx = khv.IdNsx,
+                //IdSize = khv.IdSize,
+                //IdHangGiay = khv.IdHangGiay,
+                //IdChieuCaoDeGiay = khv.IdChieuCaoDeGiay,
+                //IdGiay = khv.IdGiay,
+                //MoTa = khv.MoTa,
+                //GiaBan = khv.GiaBan,
+                //GiaNhap = khv.GiaNhap,
+                //SoLuongTon = khv.SoLuongTon,
+                //TrangThai = khv.TrangThaiCTG,
 
             };
             return _IChiTietGiayRepositories.Update(b) ? "sửa thành công" : "sửa thành công";
@@ -87,18 +87,18 @@ namespace B_BUS.Services
 
             ChiTietGiay b = new()
             {
-                Id = khv.IdCTG,
-                IdMauSac = khv.IdMauSac,
-                IdNsx = khv.IdNsx,
-                IdSize = khv.IdSize,
-                IdHangGiay = khv.IdHangGiay,
-                IdChieuCaoDeGiay = khv.IdChieuCaoDeGiay,
-                IdGiay = khv.IdGiay,
-                MoTa = khv.MoTa,
-                GiaBan = khv.GiaBan,
-                GiaNhap = khv.GiaNhap,
-                SoLuongTon = khv.SoLuongTon,
-                TrangThai = khv.TrangThaiCTG,
+                //Id = khv.IdCTG,
+                //IdMauSac = khv.IdMauSac,
+                //IdNsx = khv.IdNsx,
+                //IdSize = khv.IdSize,
+                //IdHangGiay = khv.IdHangGiay,
+                //IdChieuCaoDeGiay = khv.IdChieuCaoDeGiay,
+                //IdGiay = khv.IdGiay,
+                //MoTa = khv.MoTa,
+                //GiaBan = khv.GiaBan,
+                //GiaNhap = khv.GiaNhap,
+                //SoLuongTon = khv.SoLuongTon,
+                //TrangThai = khv.TrangThaiCTG,
 
             };
             return _IChiTietGiayRepositories.Delete(b) ? "xóa thành công" : "xóa thành công";
@@ -116,17 +116,13 @@ namespace B_BUS.Services
                                   join g in _IChieuCaoDeGiayRepositories.GetAll() on a.IdChieuCaoDeGiay equals g.Id
                                   select new QLChiTietGiayView()
                                   {
-                                      IdCTG = a.Id,
-                                      TenGiay = e.TenGiay,
-                                      TenMauSac = b.TenMauSac,
-                                      TenHangGiay = f.TenHangGiay,
-                                      TenNsx = c.TenNsx,
-                                      SoSize = d.SoSize,
-                                      KichCo = g.KichCo,
-                                      GiaNhap = a.GiaNhap,
-                                      GiaBan = a.GiaBan,
-                                      SoLuongTon = a.SoLuongTon,
-                                      MoTa = a.MoTa,
+                                      ChiTietGiay = a,
+                                      MauSac = b,
+                                      Nsx = c,
+                                      Size = d,
+                                      Giay = e,
+                                      HangGiay = f,
+                                      ChieuCaoDeGiay = g
                                   }).ToList();
             return lstChiTietGiayView;
         }
