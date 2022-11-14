@@ -2,7 +2,7 @@
 
 namespace B_BUS.View_Models
 {
-    public class QLChieuCaoDeGiayView
+    public class ChieuCaoDeGiayView
     {
         public ChieuCaoDeGiay ChieuCaoDeGiay { get; set; } = new();
     }

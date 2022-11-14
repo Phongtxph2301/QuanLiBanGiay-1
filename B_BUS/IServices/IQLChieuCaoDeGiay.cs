@@ -1,12 +1,13 @@
-﻿using B_BUS.View_Models;
+﻿using A_DAL.Entities;
+using B_BUS.View_Models;
 
 namespace B_BUS.IServices
 {
     public interface IQLChieuCaoDeGiay
     {
-        string Add(QLChieuCaoDeGiayView khv);
-        string Update(QLChieuCaoDeGiayView khv);
-        string Delete(Guid idGuid);
-        List<QLChieuCaoDeGiayView> Getall();
+        bool Add(ChieuCaoDeGiay obj);
+        bool Update(ChieuCaoDeGiay obj);
+        bool Delete(ChieuCaoDeGiay obj);
+        List<ChieuCaoDeGiayView> GetAllView();
     }
 }
