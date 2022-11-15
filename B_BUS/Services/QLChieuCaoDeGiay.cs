@@ -8,6 +8,7 @@ namespace B_BUS.Services
 {
     public class QLChieuCaoDeGiay : IQLChieuCaoDeGiay
     {
+
         public IGenericRepository<ChieuCaoDeGiay> igChieuCaoDeGiay;
         public QLChieuCaoDeGiay()
         {
